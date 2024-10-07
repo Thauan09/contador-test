@@ -1,40 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-       <title>
-       Counter-Test
-       </title>
-    </head>
-       <style>
-            html{
-         margin: 0;
-         box-sizing: border-box;    
-         height: 100%;
-    }
-    body{
-        background: black;
-        min-height: 100vh;
-        color:rgb(218, 218, 218);
-        display: grid;
-        place-items: center;
-    }
+   <head>
+    <title>Contador-test</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box; 
+      }
 
-   section {
-      background: rgba(255,255,255, .2);
-      padding: 20px;
-      border-radius: 5px;
-      text-align: center;
-   }
-       </style>
+      body {
+         min-height: 100vh;
+         background: black;
+         color: whitesmoke;
+         display: grid;
+         place-items: center;
+      }
 
-    <body>
+      section {
+         background: rgba(255, 255, 255, 0.2);
+         padding: 20px;
+         border-radius: 5px;
+         text-align: center;
+      }
 
-       <div>
-       <h1>Counter test</h1>
-       <p>0</p>
-       <button>menos</button>
-       <button>mais</button>
-       </div>
+      p {
+         font-size: 100px;
+      }
 
-    </body>
+      h1 {
+         font-size: 50px;
+      }
+
+      button {
+         color: burlywood;
+      }
+    </style>
+   </head>
+   <body>
+    <section>
+      <h1>Contador</h1>
+      <p id="resultado"></p>
+      <button onclick="diminuir()">Menos</button>
+      <button onclick="aumentar()">Mais</button>
+    </section>
+    <script>
+
+      // estado da aplicação
+      let numero = 0
+
+      // alternador da aplicação
+      function aumentar() {
+         numero++
+         mostrarNatela()
+      }
+
+      function diminuir() {
+         numero--
+         mostrarNatela()
+      }
+
+      // colocar o estado da aplicação na tela
+      function mostrarNatela() {
+         const p = document.querySelector("#resultado")
+         p.innerText = numero
+      }
+
+
+      // inicio
+      mostrarNatela()
+    </script>
+
+   </body>
 </html>
